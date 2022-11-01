@@ -68,8 +68,8 @@ $(NAME) : $(OBJS)
 	$(CC) $(CFLAGS) $(SRC) -c
 	ar crs $(NAME) $(OBJS)
 
-bonus: $(OBJS_BONUS) libft.h
-		@ar rcs $(NAME) ($OBJS_BONUS)
+bonus: $(OBJS) $(OBJS_BONUS)
+	ar rcs $(NAME) $(OBJ) $(OBJ_BONUS)
 
 clean:
 	@rm -rf $(OBJS) $(OBJS_BONUS)

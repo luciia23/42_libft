@@ -18,6 +18,10 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	unsigned char	*d;
 	unsigned char	*s;
 
+	if (dst == NULL && src == NULL)
+		return (NULL);
+	if (len == 0 || dst == src)
+		return (dst);
 	i = 0;
 	d = (unsigned char *)dst;
 	s = (unsigned char *)src;
@@ -39,16 +43,16 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	}
 	return (d);
 }
-
-/*int	main()
+/*
+int	main()
 {
-	char dest[] = "hola que tal juan";
+	//char dest[] = NULL;
 
-	printf("Before memmove dest = %s\n", dest);
+	//printf("Before memmove dest = %s\n", dest);
 	//memmove(0, 0, 0);
-	ft_memmove(0, 0, 0);
+	ft_memmove(NULL, NULL, 5);
 	
-	printf("After  memmove dest = %s\n", dest);
+	//printf("After  memmove dest = %s\n", dest);
 
 	return(0);
 }*/

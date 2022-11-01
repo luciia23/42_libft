@@ -13,20 +13,18 @@
 #include "libft.h"
 #include <stdio.h>
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+static char	*make_subs(char const *s, unsigned int start, size_t len)
 {
 	char			*subs;
 	unsigned int	i;
 	unsigned int	j;
 
-	i = 0;
-	j = 0;
-	if (s == NULL)
-		return (NULL);
-	subs = (char *) malloc(sizeof(char) * (len + 1));
+	subs = (char *) malloc(sizeof(*s) * (len + 1));
 	if (!subs)
 		return (NULL);
-	while (s[i] != 0)
+	i = 0;
+	j = 0;
+	while (s[i])
 	{
 		if (i >= start && j < len)
 		{
@@ -38,9 +36,23 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	subs[j] = '\0';
 	return (subs);
 }
+
+char	*ft_substr(char const *s, unsigned int start, size_t len)
+{
+	char			*subs;
+
+	if (len > ft_strlen(s))
+		len = ft_strlen(s) - start;
+	if (start >= ft_strlen(s))
+		len = 0;
+	if (s == NULL)
+		return (NULL);
+	subs = make_subs(s, start, len);
+	return (subs);
+}
 /*
 int	main()
 {
-	char	str[] = "lorem ipsum dolor sit amet";
-	printf("%s", ft_substr(str, 0, 10));
+	char	str[] = "tripouille";
+	printf("%s", ft_substr(str, 0, 4200));
 }*/
