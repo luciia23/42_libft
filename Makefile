@@ -6,7 +6,7 @@
 #    By: lcollado <lcollado@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/21 16:22:26 by lcollado          #+#    #+#              #
-#    Updated: 2022/10/26 17:46:35 by lcollado         ###   ########.fr        #
+#    Updated: 2022/11/03 18:29:30 by lcollado         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -69,7 +69,7 @@ $(NAME) : $(OBJS)
 	ar crs $(NAME) $(OBJS)
 
 bonus: $(OBJS) $(OBJS_BONUS)
-	ar rcs $(NAME) $(OBJ) $(OBJ_BONUS)
+	ar crs $(NAME) $(OBJS) $(OBJS_BONUS)
 
 clean:
 	@rm -rf $(OBJS) $(OBJS_BONUS)
