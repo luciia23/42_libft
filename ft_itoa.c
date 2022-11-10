@@ -6,12 +6,17 @@
 /*   By: lcollado <lcollado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 16:19:28 by lcollado          #+#    #+#             */
-/*   Updated: 2022/10/12 11:32:18 by lcollado         ###   ########.fr       */
+/*   Updated: 2022/11/07 18:14:54 by lcollado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
+#include <limits.h>
+
+void check_leaks(void) { 
+	system("leaks -q a.out\n"); 
+}
 
 static size_t	number_len(int n)
 {
@@ -48,11 +53,11 @@ char	*ft_itoa(int n)
 
 	len = number_len(n);
 	sign = 1;
+	if (n == -2147483648)
+		return (ft_strdup("-2147483648"));
 	s = (char *)malloc((len + 1) * sizeof(char));
 	if (!s)
 		return (NULL);
-	if (n == -2147483648)
-		return (ft_strdup("-2147483648"));
 	if (n == 0)
 		s[0] = '0';
 	if (n < 0)
@@ -66,10 +71,18 @@ char	*ft_itoa(int n)
 
 // int	main()
 // {
+// 	atexit(check_leaks);
 // 	char *aaa;
-// 	aaa = ft_itoa(-15);
+// 	aaa = ft_itoa(-2147483648);
+// 	int i = 0;
+// 	while (aaa[i])
+// 	{
+// 		printf("%c\n", aaa[i]);
+// 		i++;
+// 	}
 // 	printf("%s\n", aaa);
-// 	system("leaks -q a.out");
+// 	// system("leaks -q a.out");
+// 	free(aaa);
 // 	// printf("!!!!!!!!!!!!!!!!!!!!\n");
 // 	return 0;
 // }

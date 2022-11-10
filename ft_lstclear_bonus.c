@@ -6,7 +6,7 @@
 /*   By: lcollado <lcollado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 18:26:46 by lcollado          #+#    #+#             */
-/*   Updated: 2022/11/03 18:26:47 by lcollado         ###   ########.fr       */
+/*   Updated: 2022/11/07 18:27:58 by lcollado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,16 @@
 
 void    ft_lstclear(t_list **lst, void (*del)(void *))
 {
-    if (lst == NULL)
-        return ;
-    while (lst)
+    t_list  *tmp;
+    if (*lst && del)
     {
-        ft_lstdelone(*lst, del);
-        lst = &(*lst) -> next;
+        while (*lst)
+        {
+            tmp = (*lst) -> next;
+            ft_lstdelone(*lst, del);
+            (*lst) = tmp;
+        }
+        free(*lst);
     }
+   
 }

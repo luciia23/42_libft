@@ -6,7 +6,7 @@
 #    By: lcollado <lcollado@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/21 16:22:26 by lcollado          #+#    #+#              #
-#    Updated: 2022/11/03 18:29:30 by lcollado         ###   ########.fr        #
+#    Updated: 2022/11/07 16:39:34 by lcollado         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -59,6 +59,7 @@ SRC_BONUS = ft_lstnew_bonus.c\
 			ft_lstdelone_bonus.c\
 			ft_lstclear_bonus.c\
 			ft_lstiter_bonus.c\
+			ft_lstmap_bonus.c
 
 OBJS_BONUS = $(SRC_BONUS:.c=.o)
 
@@ -68,8 +69,8 @@ $(NAME) : $(OBJS)
 	$(CC) $(CFLAGS) $(SRC) -c
 	ar crs $(NAME) $(OBJS)
 
-bonus: $(OBJS) $(OBJS_BONUS)
-	ar crs $(NAME) $(OBJS) $(OBJS_BONUS)
+bonus: $(OBJS_BONUS)
+	ar crs $(NAME) $(OBJS_BONUS)
 
 clean:
 	@rm -rf $(OBJS) $(OBJS_BONUS)

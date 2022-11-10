@@ -6,16 +6,16 @@
 /*   By: lcollado <lcollado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 13:45:54 by lcollado          #+#    #+#             */
-/*   Updated: 2022/11/03 19:47:42 by lcollado         ###   ########.fr       */
+/*   Updated: 2022/11/10 17:05:26 by lcollado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
 
-void check_leaks(void) { 
-	system("leaks -q a.out\n"); 
-}
+// void check_leaks(void) { 
+// 	system("leaks -q a.out\n"); 
+// }
 
 static int	count_words(char const *s, char c)
 {
@@ -66,13 +66,17 @@ char	**ft_split(char const *s, char c)
 	str = arr_mem(s, c);
 	if(!str)
 		return(NULL);
+	if (num == 0)
+	{
+		str[0] = NULL;
+		return (str);
+	}
 	i = 0;
 	j = 0;
 	while (s[i])
 	{
 		while (s[i] == c)
 			i++;	
-			
 		start = i;
 		while(s[i] && s[i] != c)
 			i++;
@@ -108,6 +112,8 @@ char	**ft_split(char const *s, char c)
 // 			i++;
 // 		}
 // 		printf("%s\n", str[i]);
+// 		printf("%s\n", "------");
+// 		printf("%s\n", str[1]);
 // 		free(str);
 // 	}
 // 	return 0;
