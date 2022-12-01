@@ -6,17 +6,11 @@
 /*   By: lcollado <lcollado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 17:35:04 by lcollado          #+#    #+#             */
-/*   Updated: 2022/11/10 17:16:07 by lcollado         ###   ########.fr       */
+/*   Updated: 2022/12/01 09:13:23 by lcollado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-
-
-void check_leaks(void) { 
-	system("leaks -q a.out\n"); 
-}
 
 static char	*make_subs(char const *s, unsigned int start, size_t len)
 {
@@ -46,7 +40,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char			*subs;
 
-	checkLen();
 	if (s == NULL)
 		return (NULL);
 	if (len > ft_strlen(s))
@@ -54,15 +47,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (start >= ft_strlen(s))
 		len = 0;
 	subs = make_subs(s, start, len);
-	printf("%p", subs);
 	if (!subs)
 		return (NULL);
 	return (subs);
 }
-
-// int	main()
-// {
-// 	atexit(check_leaks);
-// 	char	str[] = "tripouille";
-// 	printf("%s", ft_substr(str, 0, 4200));
-// }

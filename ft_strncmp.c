@@ -6,7 +6,7 @@
 /*   By: lcollado <lcollado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 17:08:51 by lcollado          #+#    #+#             */
-/*   Updated: 2022/10/06 20:10:49 by lcollado         ###   ########.fr       */
+/*   Updated: 2022/11/29 17:20:43 by lcollado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,3 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	}
 	return (((unsigned char *)s1)[i] - ((unsigned char *)s2)[i]);
 }
-/*
-int main() 
-{
-	printf("%d", ft_strncmp("abcdefgh", "abcdwxyz", 4));
-	//printf("%d", strncmp("abcdefgh", "abcdwxyz", 4));
-
-}*/

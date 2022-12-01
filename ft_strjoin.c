@@ -6,7 +6,7 @@
 /*   By: lcollado <lcollado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 18:12:11 by lcollado          #+#    #+#             */
-/*   Updated: 2022/10/06 19:56:54 by lcollado         ###   ########.fr       */
+/*   Updated: 2022/11/29 17:19:40 by lcollado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,23 +40,3 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	s[i] = '\0';
 	return (s);
 }
-
-
-// int main(int argc, char **argv)
-// {
-// 	(void)argc;
-// 	(void)argv;
-
-// 	char *str;
-// 	int i = 5;
-// 	while(i--)
-// 	{
-// 	//str = malloc(sizeof(char )* 9);
-// 	//free(str);
-// 	str = ft_strjoin(argv[1], argv[2]);
-// 	//free(str);
-
-// 	}
-// 	system("leaks -q a.out");
-
-// }

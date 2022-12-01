@@ -6,17 +6,11 @@
 /*   By: lcollado <lcollado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 16:19:28 by lcollado          #+#    #+#             */
-/*   Updated: 2022/11/07 18:14:54 by lcollado         ###   ########.fr       */
+/*   Updated: 2022/11/29 16:53:47 by lcollado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <limits.h>
-
-void check_leaks(void) { 
-	system("leaks -q a.out\n"); 
-}
 
 static size_t	number_len(int n)
 {
@@ -68,21 +62,3 @@ char	*ft_itoa(int n)
 	to_string(n, s, len, sign);
 	return (s);
 }
-
-// int	main()
-// {
-// 	atexit(check_leaks);
-// 	char *aaa;
-// 	aaa = ft_itoa(-2147483648);
-// 	int i = 0;
-// 	while (aaa[i])
-// 	{
-// 		printf("%c\n", aaa[i]);
-// 		i++;
-// 	}
-// 	printf("%s\n", aaa);
-// 	// system("leaks -q a.out");
-// 	free(aaa);
-// 	// printf("!!!!!!!!!!!!!!!!!!!!\n");
-// 	return 0;
-// }

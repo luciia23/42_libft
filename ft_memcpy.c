@@ -6,7 +6,7 @@
 /*   By: lcollado <lcollado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/14 17:00:54 by lcollado          #+#    #+#             */
-/*   Updated: 2022/10/06 20:12:08 by lcollado         ###   ########.fr       */
+/*   Updated: 2022/11/18 07:38:58 by lcollado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,3 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	}
 	return (dst);
 }
-/*
-int	main()
-{
-	//printf("%s", memcpy(NULL, NULL, 0));
-	printf("%s", ft_memcpy(NULL, "segfaulter tu dois", 0));
-}*/

@@ -6,7 +6,7 @@
 /*   By: lcollado <lcollado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 18:31:53 by lcollado          #+#    #+#             */
-/*   Updated: 2022/09/27 18:31:55 by lcollado         ###   ########.fr       */
+/*   Updated: 2022/12/01 09:29:03 by lcollado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,3 @@ char	*ft_strrchr(const char *s, int c)
 	}
 	return (0);
 }
-/*
-int main()
-{
-  char str[] = "bonjour";
-  char * ch = ft_strrchr(str + 2,'b');
-  printf("%s", ch);
-  return 0;
-}*/
