@@ -5,3 +5,5 @@ main.c
 libft-war-machine
 libftTester
 libft-unit-test
+*.o
+libft.a

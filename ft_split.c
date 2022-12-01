@@ -6,7 +6,7 @@
 /*   By: lcollado <lcollado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 13:45:54 by lcollado          #+#    #+#             */
-/*   Updated: 2022/12/01 09:28:39 by lcollado         ###   ########.fr       */
+/*   Updated: 2022/12/01 17:03:52 by lcollado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ char	**make_split(char	**str, int num, char const *s, char c)
 		while (s[i] && s[i] != c)
 			i++;
 		str[j++] = ft_substr(s, start, i - start);
-		while (s[i] == c)
+		while (s[i] && s[i] == c)
 			i++;
 		if (j == num)
 			break ;
